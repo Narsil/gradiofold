@@ -1,0 +1,18 @@
+<head>
+    <link rel="stylesheet" type="text/css" href="molstar.css" />
+</head>
+<body>
+    <div id="app" style="height: 50rem; width: 100%"></div>
+    <script type="text/javascript" src="molstar.js"></script>
+    <script type="text/javascript">
+        function getParam(name, regex) {
+            var r = new RegExp(name + "=" + "(" + regex + ")[&]?", "i");
+            return decodeURIComponent(
+                ((window.location.search || "").match(r) || [])[1] || ""
+            );
+        }
+        const structure_url = getParam("structure-url", "[^&]+");
+        var viewer = new molstar.Viewer("app");
+        viewer.loadStructureFromUrl(structure_url, "pdb", false);
+    </script>
+</body>
