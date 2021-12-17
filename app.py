@@ -4,7 +4,9 @@ import tempfile
 
 
 def molstar(output_name):
-    structure_url = f"https://nodata.dev/gradiofold/outputs/{output_name}"
+    structure_url = (
+        f"https://nodata.dev/gradiofold/predictions/{output_name}/predictions.pdb"
+    )
     return f'<iframe style="height: 50rem; width:100%" src="https://nodata.dev/gradiofold/molstar.html?structure-url={structure_url}"/>'
 
 
@@ -13,7 +15,7 @@ def main(dropdown):
     return molstar(filename)
 
 
-PRECALCULATED_MOLECULES = {"Covid spike (alpha)": "covid-alpha.pdb"}
+PRECALCULATED_MOLECULES = {"Covid spike": "ncov-s"}
 
 
 file_input = gr.inputs.File(
