@@ -5,7 +5,7 @@ import tempfile
 
 def molstar(output_name):
     structure_url = (
-        f"https://nodata.dev/gradiofold/predictions/{output_name}/predictions.pdb"
+        f"https://nodata.dev/gradiofold/predictions/{output_name}/prediction.pdb"
     )
     return f'<iframe style="height: 50rem; width:100%" src="https://nodata.dev/gradiofold/molstar.html?structure-url={structure_url}"/>'
 
